@@ -14,11 +14,16 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   color: var(--dark);
   background: var(--white);
   line-height: 1.6;
+  width: 100%; /* Ensure body takes viewport width */
 }
 
 /* Typography */
@@ -74,7 +79,7 @@ p {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%; /* Changed from 100vw to 100% */
   background: rgba(26, 54, 93, 0.95);
   color: var(--white);
   padding: 1rem 0;
@@ -134,7 +139,7 @@ p {
 .mobile-menu {
   display: none;
   background: var(--primary);
-  width: 100vw;
+  width: 100%; /* Changed from 100vw to 100% */
   padding: 1rem 0;
   position: absolute;
   top: 100%;
@@ -173,7 +178,7 @@ p {
   color: var(--white);
   padding: 5rem 0 3rem;
   text-align: center;
-  width: 100vw;
+  width: 100%; /* Changed from 100vw to 100% */
   position: relative;
 }
 
@@ -231,7 +236,7 @@ p {
 .about {
   padding: 3rem 0;
   background: var(--white);
-  width: 100vw;
+  width: 100%; /* Changed from 100vw to 100% */
 }
 
 .about-content {
@@ -292,7 +297,7 @@ p {
 .legacy {
   padding: 3rem 0;
   background: var(--light);
-  width: 100vw;
+  width: 100%; /* Changed from 100vw to 100% */
   text-align: center;
 }
 
@@ -410,6 +415,7 @@ p {
   }
 }
 
+/* Mobile view (unchanged) */
 @media (max-width: 767px) {
   .timeline::before {
     left: 20px;
@@ -431,7 +437,7 @@ p {
 .team {
   padding: 3rem 0;
   background: var(--white);
-  width: 100vw;
+  width: 100%; /* Changed from 100vw to 100% */
   text-align: center;
 }
 
@@ -512,7 +518,7 @@ p {
 .services {
   padding: 3rem 0;
   background: var(--light);
-  width: 100vw;
+  width: 100%; /* Changed from 100vw to 100% */
   text-align: center;
 }
 
@@ -572,7 +578,7 @@ p {
 .contact {
   padding: 3rem 0;
   background: var(--white);
-  width: 100vw;
+  width: 100%; /* Changed from 100vw to 100% */
   text-align: center;
 }
 
@@ -699,7 +705,7 @@ p {
   background: var(--dark);
   color: var(--white);
   padding: 3rem 0 1rem;
-  width: 100vw;
+  width: 100%; /* Changed from 100vw to 100% */
 }
 
 .footer-content {
