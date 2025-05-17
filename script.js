@@ -5,10 +5,34 @@ AOS.init({
   offset: 50
 });
 
-// Navbar Scroll Effect
+// Navbar Scroll Effect (Shadow on Scroll) and Auto-Hide on Mobile
+let lastScrollTop = 0;
+const navbar = document.querySelector('.navbar');
+const mobileThreshold = 768; // Breakpoint for mobile
+const scrollThreshold = 100; // Scroll distance before hiding
+
 window.addEventListener('scroll', () => {
-  const navbar = document.querySelector('.navbar');
+  // Add shadow when scrolled
   navbar.classList.toggle('scrolled', window.scrollY > 50);
+
+  // Auto-hide navbar on mobile
+  if (window.innerWidth < mobileThreshold) {
+    let currentScrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    if (currentScrollTop > lastScrollTop && currentScrollTop > scrollThreshold) {
+      // Scrolling down: Hide navbar
+      navbar.style.transform = 'translateY(-100%)';
+      navbar.style.transition = 'transform 0.3s ease';
+    } else {
+      // Scrolling up: Show navbar
+      navbar.style.transform = 'translateY(0)';
+      navbar.style.transition = 'transform 0.3s ease';
+    }
+    lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Prevent negative scroll values
+  } else {
+    // Ensure navbar is visible on larger screens
+    navbar.style.transform = 'translateY(0)';
+  }
 });
 
 // Mobile Menu Toggle
